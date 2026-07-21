@@ -1,0 +1,22 @@
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Large intermediate single-cell objects (regenerate from the notebook)
+*.h5ad
+*.h5
+temp_data/
+
+# OS
+.DS_Store
+Thumbs.db

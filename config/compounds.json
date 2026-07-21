@@ -1,0 +1,70 @@
+{
+  "_README": "PLACEHOLDER compound definitions. The notebook reads this file instead of hard-coding candidate compounds, so the public repository names none. Replace this file with the real definitions to reproduce the recorded run; those live in the restricted repository aistanbulresearch/Dual_Shield_Data at the same path. Override the location with the COMPOUND_CONFIG environment variable.",
+  "_schema": {
+    "key": "identifier used for JSON fields in agent prompts and in the parsing code",
+    "name": "display name used in prose",
+    "stage": "administration order in the sequential strategy (1 = first)",
+    "shield": "which resistance layer this agent addresses",
+    "validation_block": "per-agent block injected into the hypothesis/combination validation prompts",
+    "pk_block": "per-agent pharmacokinetic block injected into the optimization prompt",
+    "pubmed_query": "literature-verification query string"
+  },
+
+  "combination_label": "Compound A + Compound B + Compound C",
+
+  "compounds": [
+    {
+      "key": "compound_a",
+      "name": "Compound A",
+      "stage": 3,
+      "shield": "Outer Shield",
+      "target": "The HLA-E/NKG2A inhibitory axis (Outer Shield)",
+      "target_gene": "KLRC1",
+      "class": "NKG2A-blocking agent",
+      "short_role": "Breaks the outer shield, releasing the brake on NK cells",
+      "rationale_hint": "How the HLA-E/NKG2A findings in the data support this agent",
+      "validation_block": "- Target: The HLA-E/NKG2A inhibitory axis (Outer Shield)\n- Rationale: In the data, HLA-E expression is high in CSCs and PD-L1 is virtually absent. ADAM10 and ADAM17 are suppressed — HLA-E cannot be cleaved from the surface and remains membrane-bound. In LIANA the NK inhibitory interaction score is high.\n- Clinical status: [redacted in the public configuration]",
+      "pk_block": "- Administration: [redacted in the public configuration]\n- Half-life: [redacted]\n- Metabolism: [redacted]\n- Known dose: [redacted]\n- Immune-related adverse event risk: [redacted]\n- CYP interaction: [redacted]",
+      "pubmed_claim": "Stage 3 NKG2A-blocking agent, clinical trials",
+      "pubmed_query": "NKG2A blockade clinical trial"
+    },
+    {
+      "key": "compound_b",
+      "name": "Compound B",
+      "stage": 2,
+      "shield": "Inner Shield",
+      "target": "The vimentin intermediate filament network (Inner Shield) + CSC ALDH1 activity",
+      "target_gene": "VIM",
+      "class": "Vimentin disruptor / ALDH1 inhibitor",
+      "short_role": "Destroys the inner shield, triggering anoikis",
+      "rationale_hint": "How the Vimentin/pEMT findings in the data support this agent",
+      "validation_block": "- Target: The vimentin intermediate filament network (Inner Shield) + CSC ALDH1 activity\n- Rationale: In the data, VIM expression is very high in CSCs and CDH1 is completely lost. Cells locked in a partial EMT state depend on vimentin for mechanical resistance.\n- Clinical status: [redacted in the public configuration]",
+      "pk_block": "- Bioavailability: [redacted in the public configuration]\n- Half-life: [redacted]\n- Metabolism: [redacted]\n- CYP inhibition: [redacted]\n- Known dose: [redacted]\n- Hepatotoxicity risk: [redacted]",
+      "pubmed_claim": "Stage 2 vimentin-targeting agent in cancer",
+      "pubmed_query": "vimentin targeting agent cancer"
+    },
+    {
+      "key": "compound_c",
+      "name": "Compound C",
+      "stage": 1,
+      "shield": "Shared upstream regulator",
+      "target": "The TGF-beta signaling pathway (the \"master regulator\" feeding both shields)",
+      "target_gene": "TGFBR1",
+      "class": "TGF-beta receptor I (ALK5) inhibitor",
+      "short_role": "Shuts off the master signaling tap that feeds both shields and weakens the fibrotic barrier",
+      "rationale_hint": "How the TGF-beta/stromal findings in the data support this agent",
+      "validation_block": "- Target: The TGF-beta signaling pathway (the \"master regulator\" feeding both shields)\n- Rationale: TGF-beta both upregulates HLA-E expression (feeding the outer shield) and drives the EMT/Vimentin process (feeding the inner shield). It also activates the CAFs that form the fibrotic barrier.\n- Clinical status: [redacted in the public configuration]",
+      "pk_block": "- Bioavailability: [redacted in the public configuration]\n- Half-life: [redacted]\n- Metabolism: [redacted]\n- Known dose: [redacted]\n- Cardiotoxicity risk: [redacted]\n- Clinical data: [redacted]",
+      "pubmed_claim": "Stage 1 TGF-beta receptor I inhibitor, clinical trials",
+      "pubmed_query": "TGF-beta receptor I inhibitor clinical trial"
+    }
+  ],
+
+  "ddi_notes": [
+    "- The Stage 2 agent inhibits CYP3A4 -> plasma concentration of the Stage 1 agent (a CYP3A4 substrate) increases",
+    "- No pharmacokinetic interaction is expected with the Stage 3 agent (biologic agent)"
+  ],
+  "ddi_management_summary": "Management of the Stage 2 / Stage 1 CYP3A4 interaction",
+
+  "extra_clinicaltrials_drugs": []
+}
