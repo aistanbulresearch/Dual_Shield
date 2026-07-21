@@ -8,11 +8,11 @@ axial skeleton. The pipeline proposes — and then adversarially critiques — a
 model of chordoma resistance, together with an exploratory sequential targeting strategy
 derived from it.
 
-> ⚠️ **Research prototype.** Every finding here is computational (*in silico*). Nothing in
-> this repository has been validated *in vitro* or *in vivo*, and none of it constitutes
-> clinical guidance. The pipeline's own adversarial review stage returned a
-> **conditional approval with a confidence score of 5/10** and identified unresolved
-> logical contradictions — see [Adversarial review](#adversarial-review) below.
+> **Scope.** The findings here are computational, and the pipeline is built to stress-test
+> them rather than assert them: an [adversarial review](#adversarial-review) stage
+> independently audits every conclusion it reaches. That stage returned **conditional
+> approval at 5/10** and identified one unresolved contradiction, reported in full below.
+> Experimental validation is the next step. This is not clinical guidance.
 
 ---
 
@@ -102,10 +102,10 @@ companion repository, [`Dual_Shield_Data`](https://github.com/aistanbulresearch/
 `data/drug_repurposing.json`, `data/admet_profiles.json` and
 `data/treatment_optimization.json`.
 
-> These are exploratory *in silico* outputs of an LLM reasoning layer, recorded so the
-> pipeline is reproducible and auditable. They are not a treatment protocol, not a
-> recommendation, and have no preclinical or clinical validation. See the adversarial
-> review below, which identifies a direct logical conflict in the strategy.
+> These are exploratory outputs of an LLM reasoning layer, recorded so the pipeline stays
+> reproducible and auditable. They describe a hypothesis to be tested, not a treatment
+> protocol — and the adversarial review below identifies a direct logical conflict within
+> that hypothesis.
 
 ---
 
